@@ -6,7 +6,7 @@ const saveButton = document.getElementById("save-btn");
 const sortCodeText = document.getElementById("sort-code");
 const wrapper = document.querySelector("#wrapper");
 const deleteBtn = document.getElementById("delete-button");
-const container = document.getElementById("container");
+const container = document.querySelector("#container");
 
 let accountNumber;
 
@@ -17,7 +17,11 @@ function generateAccountNumber() {
     accountNumber += selectedNumber;
   }
 
-  accountNumberText.textContent = accountNumber;
+  if (accountNumber === undefined && sortCode === undefined) {
+    return alert("Please generate bank details");
+  } else {
+    accountNumberText.textContent = accountNumber;
+  }
 }
 
 function getRandomNumber() {
@@ -38,42 +42,40 @@ button.addEventListener("click", function () {
   generateSortCode();
 });
 
+let copyBtn;
+
 function saveAccountNumber() {
   accountNumber = accountNumber;
   let container = document.createElement("div");
-  container.textContent = `Account number: ${accountNumber}`;
-  wrapper.appendChild(container);
-  container.setAttribute("onclick", "this.remove()");
-  container.setAttribute("id", "text");
+  let z = document.createElement("p");
+  z.textContent = `Account number: ${accountNumber}`;
   container.id = "container";
   sortCode = sortCode;
   let x = document.createElement("p");
   x.textContent = `Sort code: ${sortCode[0]}${sortCode[1]}-${sortCode[2]}${sortCode[3]}-${sortCode[4]}${sortCode[5]}`;
+  container.appendChild(z);
   container.appendChild(x);
-  x.setAttribute("onclick", "this.remove()");
+  wrapper.appendChild(container);
+  container.setAttribute("onclick", "copyBtn.remove()");
+  container.setAttribute("onclick", "this.remove()");
   x.setAttribute("id", "text2");
-}
-
-let text = document.querySelectorAll("#text, #text2").innerHTML;
-const copy = async () => {
-  try {
-    await navigator.clipboard.writeText(text);
-    console.log("Content copied to clipboard");
-  } catch (err) {
-    console.error("Failed to copy: ", err);
-  }
-  alert("copied");
-};
-
-function createElement() {
-  let copyBtn = document.createElement("button");
+  copyBtn = document.createElement("button");
   copyBtn.textContent = "Copy to clipboard";
   copyBtn.id = "copy-btn";
-  wrapper.appendChild(copyBtn);
+  container.appendChild(copyBtn);
   copyBtn.setAttribute("onclick", "copy()");
 }
 
+let text = document.querySelectorAll("#container, #text2").textContent;
+const copy = async () => {
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("Content copied to clipboard");
+  } catch (err) {
+    alert("Failed to copy: ", err);
+  }
+};
+
 saveButton.addEventListener("click", function () {
   saveAccountNumber();
-  createElement();
 });
