@@ -21,6 +21,7 @@ h1 {
 
 button {
   font-family: Montserrat, sans-serif;
+  font-size: 30px;
   width: 150px;
   margin-top: 40px;
   background-color: rgba(85, 116, 77, 0.475);
