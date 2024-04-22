@@ -21,7 +21,7 @@ h1 {
 
 button {
   font-family: Montserrat, sans-serif;
-  width: 20%;
+  width: 150px;
   margin-top: 40px;
   background-color: rgba(85, 116, 77, 0.475);
   border: none;
@@ -29,4 +29,19 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+#container {
+  font-family: Karla, sans-serif;
+  margin-top: 12px;
+}
+
+#copy-btn {
+  margin-top: 10px;
 }
