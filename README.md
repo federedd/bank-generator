@@ -34,8 +34,4 @@ This is a simple web application that generates random bank account details, inc
 ## Credits
 
 This project was created by Fedi.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 ```

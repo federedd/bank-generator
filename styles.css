@@ -59,3 +59,7 @@ button:hover {
     font-size: 1.5em;
   }
 }
+
+.details-wrapper {
+  text-align: center;
+}
