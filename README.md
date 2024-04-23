@@ -9,7 +9,7 @@ This is a simple web application that generates random bank account details, inc
 
 ## Preview
 
-![Bank Generator Preview](./preview.png)
+![Bank Generator Preview](./assets/bank-generator-demo-img.png)
 
 ## Features
 
