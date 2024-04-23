@@ -16,12 +16,7 @@ function generateAccountNumber() {
     const selectedNumber = numbers[getRandomNumber()];
     accountNumber += selectedNumber;
   }
-
-  if (accountNumber === undefined && sortCode === undefined) {
-    return alert("Please generate bank details");
-  } else {
-    accountNumberText.textContent = accountNumber;
-  }
+  accountNumberText.textContent = accountNumber;
 }
 
 function getRandomNumber() {
@@ -29,6 +24,7 @@ function getRandomNumber() {
 }
 
 let sortCode;
+
 function generateSortCode() {
   sortCode = "";
   for (let i = 0; i < 6; i++) {
@@ -45,24 +41,21 @@ button.addEventListener("click", function () {
 let copyBtn;
 
 function saveAccountNumber() {
-  accountNumber = accountNumber;
   let container = document.createElement("div");
   let z = document.createElement("p");
   z.textContent = `Account number: ${accountNumber}`;
   container.id = "container";
-  sortCode = sortCode;
   let x = document.createElement("p");
   x.textContent = `Sort code: ${sortCode[0]}${sortCode[1]}-${sortCode[2]}${sortCode[3]}-${sortCode[4]}${sortCode[5]}`;
   container.appendChild(z);
   container.appendChild(x);
   wrapper.appendChild(container);
-  container.setAttribute("onclick", "copyBtn.remove()");
-  container.setAttribute("onclick", "this.remove()");
-  x.setAttribute("id", "text2");
+  container.setAttribute("onclick", "this.remove(); copyBtn.remove()");
+  x.id = "text2";
   copyBtn = document.createElement("button");
   copyBtn.textContent = "Copy to clipboard";
   copyBtn.id = "copy-btn";
-  container.appendChild(copyBtn);
+  wrapper.appendChild(copyBtn);
   copyBtn.setAttribute("onclick", "copy()");
 }
 

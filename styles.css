@@ -5,7 +5,7 @@
 
 .wrapper {
   background-color: rgb(220, 220, 220);
-  margin: 10vw;
+  margin: 6vw;
   padding: 30px;
   border-radius: 20px;
   display: flex;
@@ -52,4 +52,10 @@ button:hover {
 
 #copy-btn {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 430px) {
+  h1 {
+    font-size: 1.5em;
+  }
 }
