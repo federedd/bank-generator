@@ -1,8 +1,5 @@
 # bank-generator
 
-Here's a README file in Markdown format for your bank details generator app:
-
-```markdown
 # Bank Details Generator
 
 This is a simple web application that generates random bank account details, including an account number and a sort code.
@@ -34,4 +31,3 @@ This is a simple web application that generates random bank account details, inc
 ## Credits
 
 This project was created by Fedi.
-```
